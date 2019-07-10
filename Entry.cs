@@ -79,7 +79,7 @@ namespace RosterTools
                 // 10% chance
                 if (rand < 10)
                 {
-                    rand = rnd.Next(2, 4);
+                    rand = rnd.Next(1, 4);
                     return string.Format("{0} {1}{2}{3}@umassd.edu", fname.Substring(0, 1), lname, rand);
                 }
                 return string.Format("{0} {1}{2}@umassd.edu", fname.Substring(0, 1), lname);
