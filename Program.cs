@@ -18,7 +18,6 @@ namespace RosterTools
             roster.Write();
 
             Console.WriteLine(roster.ToString());
-
             Console.ReadKey();
 
         }
