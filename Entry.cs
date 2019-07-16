@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace RosterTools
 {
@@ -12,6 +13,7 @@ namespace RosterTools
         {
             Male = 'm',
             Female = 'f',
+            Unassigned = 'u',
         }
 
         public enum Room
@@ -80,14 +82,18 @@ namespace RosterTools
                 if (rand < 10)
                 {
                     rand = rnd.Next(1, 4);
-                    return string.Format("{0} {1}{2}{3}@umassd.edu", fname.Substring(0, 1), lname, rand);
+                    return string.Format("{0}{1}{2}@umassd.edu", fname.Substring(0, 1).ToLower(), lname.ToLower(), rand);
                 }
-                return string.Format("{0} {1}{2}@umassd.edu", fname.Substring(0, 1), lname);
+                return string.Format("{0}{1}@umassd.edu", fname.Substring(0, 1).ToLower(), lname.ToLower());
             }
 
             private set { }
         }
 
+        public override string ToString()
+        {
+            return string.Format("Entry\nName:{0}\nSex:{1}\nBooking: {2}\nEmail: {3}", fullName, sex, booking, email);
+        }
 
 
     }
